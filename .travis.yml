@@ -8,7 +8,7 @@ services:
 before_install:
 - docker pull debian
 - docker ps -a
-- docker run debian /bin/sh -c "apt-get install ruby gcc ruby-dev rake make -y"
+- docker run debian /bin/sh -c "apt-get update; apt-get install ruby gcc ruby-dev rake make -y"
 
 script:
   - gem build numo-narray.gemspec
